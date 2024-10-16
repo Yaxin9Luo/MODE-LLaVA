@@ -132,7 +132,7 @@ We also provide the stage-1 checkpoint for your convenience.
 | Version | Download |
 |---------|----------|
 | $\gamma$-MOD-llava-hr-7b-stage1 | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-llava-hr-7b-stage1) |
-| $\gamma$-MOD-Mini-Gemini-HD-7b-stage1 | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-Mini-Gemini-HD-7b-stage1) |
+| $\gamma$-MOD-Mini-Gemini-HD-7b-stage1 | [model](placeholder) |
 ##### Step 2: Fine-Tuning
 After you get the ARank, you can use the ARank to replace the dense layers in the original model. Reference to llava_llama_mod.py file and the initialize_mod_modules function.
 Then train the model with the following command:
@@ -142,9 +142,11 @@ bash /path/to/your/fine_tune_mod.sh
 We also provide the stage-2 sft checkpoint for your convenience.
 | Version | Download |
 |---------|----------|
-| $\gamma$-MOD-llava-hr-7b | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-llava-hr-7b) |
-| $\gamma$-MOD-llava-hr-13b | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-llava-hr-13b) |
-| $\gamma$-MOD-Mini-Gemini-HD-7b | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-Mini-Gemini-HD-7b) |
+| $\gamma$-MOD-llava-hr-7b-0.34 | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-llava-hr-7b-0.34) |
+| $\gamma$-MOD-llava-hr-13b-0.34 | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-llava-hr-13b-0.34) |
+| $\gamma$-MOD-llava-hr-13b-0.5 | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-llava-hr-13b-0.5) |
+| $\gamma$-MOD-Mini-Gemini-HD-7b-0.34 | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-Mini-Gemini-HD-7b-0.34) |
+| $\gamma$-MOD-Mini-Gemini-HD-7b-0.5 | [model](https://huggingface.co/YaxinLuo/Gamma-MoD-Mini-Gemini-HD-7b-0.5) |
 ---
 ## ⚖️ Evaluation
 We follow  [LLaVA-v1.5](https://github.com/haotian-liu/LLaVA/tree/main) to conduct evaluations. you should download [eval.zip](https://drive.google.com/file/d/1atZSBBrAX54yYpxtVVW33zFvcnaHeFPy/view?usp=sharing) and unzip it to `./playground/data/eval`. Please refer to [Evaluation.md](./Evaluation.md) to prepare the data.   
