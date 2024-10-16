@@ -244,69 +244,7 @@ def MoDLlamaDecoderLayer_forward_inference(self):
             past_key_value (`Tuple(torch.FloatTensor)`, *optional*): cached past key and value projection states
             capacity_factor(float): topk tokens will pass into this layer's transformer block
         """
-    #     batch_size, seq_len, dim = hidden_states.shape
-    #     past_key_value_length = past_key_value.get_seq_length() if past_key_value is not None else 0
 
-    #     # Calculate router probabilities
-    #     router_logits = self.router(self.input_layernorm(hidden_states))
-    #     route_probabilities = F.softmax(router_logits, dim=-1)[:, :, 1]
-
-    #     prob_threshold = 0.005 
-    #     high_prob_mask = route_probabilities > prob_threshold
-    #     batch_indices, token_indices = high_prob_mask.nonzero(as_tuple=True)
-    #     selected_tokens = token_indices.view(batch_size, -1)
-    #     tokens_chosen = selected_tokens.size(1)  # Number of chosen tokens per batch
-
-    #     # Gather selected hidden states and other relevant tensors
-    #     indices_expanded = selected_tokens.unsqueeze(-1).expand(-1, -1, dim)
-    #     selected_hidden_states = torch.gather(input=hidden_states, dim=1, index=indices_expanded)
-    #     r_weights = torch.gather(route_probabilities, dim=1, index=selected_tokens)
-
-    #     # Prepare attention mask and position ids for selected tokens
-    #     if seq_len > 1:
-    #         new_attention_mask = torch.zeros(batch_size, 1, tokens_chosen, tokens_chosen).to(selected_hidden_states.device)
-    #         upper_tri_indices = torch.triu_indices(row=tokens_chosen, col=tokens_chosen, offset=1)
-    #         new_attention_mask[:, :, upper_tri_indices[0], upper_tri_indices[1]] = -65504.
-    #         new_position_ids = torch.arange(0, tokens_chosen,
-    #                                         dtype=torch.long, device=hidden_states.device).unsqueeze(0)
-    #         # print(new_position_ids)
-    #     else:
-    #         new_attention_mask = torch.zeros(batch_size, 1, seq_len, past_key_value_length).to(hidden_states.device)
-    #         new_position_ids = torch.arange(past_key_value_length-1, past_key_value_length,
-    #                                         dtype=torch.long, device=hidden_states.device).unsqueeze(0)
-    #         # print(new_position_ids)
-
-    #     # Process selected hidden states
-    #     residual = selected_hidden_states
-    #     selected_hidden_states = self.input_layernorm(selected_hidden_states)
-    #     selected_hidden_states, self_attn_weights, present_key_value = self.self_attn(
-    #         hidden_states=selected_hidden_states,
-    #         attention_mask=new_attention_mask,
-    #         position_ids=new_position_ids,
-    #         past_key_value=past_key_value,
-    #         output_attentions=output_attentions,
-    #         use_cache=use_cache,
-    #         **kwargs,
-    #     )
-    #     selected_hidden_states = residual + selected_hidden_states
-
-    #     # MLP
-    #     residual = selected_hidden_states
-    #     selected_hidden_states = self.post_attention_layernorm(selected_hidden_states)
-    #     selected_hidden_states = self.mlp(selected_hidden_states) * r_weights.unsqueeze(-1)
-    #     selected_hidden_states = residual + selected_hidden_states
-
-    #     # Scatter selected hidden states back to original size
-    #     hidden_states = hidden_states.scatter(dim=1, index=indices_expanded, src=selected_hidden_states)
-
-    #     outputs = (hidden_states,)
-    #     if output_attentions:
-    #         outputs += (self_attn_weights,)
-    #     if use_cache:
-    #         outputs += (present_key_value,)
-
-    #     return outputs
-    # return forward
         batch_size,seq_len,dim = hidden_states.shape
         past_key_value_length = past_key_value.get_seq_length() if past_key_value is not None else 0
         router_logits = self.router(self.input_layernorm(hidden_states))
