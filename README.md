@@ -4,7 +4,7 @@
 </p>
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue)]()
-[![Project](https://img.shields.io/badge/🔗-Project-blue)](https://yaxin9luo.github.io/Gamma-MOD)
+[![Project](https://img.shields.io/badge/🚀-Project-green)](https://yaxin9luo.github.io/Gamma-MOD)
 [![Arxiv](https://img.shields.io/badge/📃-Arxiv-red)](https://arxiv.org/abs/placeholder)
 [![Open In Spaces](https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue)](https://huggingface.co/YaxinLuo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](link_to_license)
