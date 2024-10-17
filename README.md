@@ -108,6 +108,10 @@ pip install flash-attn --no-build-isolation
 ### Data Preparation
 Please refer to the original [LLaVA-HR](https://github.com/luogen1996/LLaVA-HR/tree/main) and [Mini-Gemini](https://github.com/dvlab-research/MGM/tree/main) for data preparation. Or whatever MLLM's offical repo you are using.
 
+**Important Notice**: For the Finetune stage, you need modify the data JSON file to move the image tokens to the beginning of the sequence. You can refer to `modify_data_config.py` to do so, or you can follow the steps below:
+```bash
+python modify_data_config.py /path/to/your/llava_v1_5_mix665k.json /path/to/save/your/modified_llava_v1_5_mix665k.json
+```
 ### Training
 #### Stage 1: Pretraining
 Please download the caption annotations blip_laion_cc_sbu_558k.json and images from here. Move the downloaded files to the /data/data folder. Then run the following command to start the training process:
