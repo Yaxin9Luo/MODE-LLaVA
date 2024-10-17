@@ -87,9 +87,6 @@ class LlavaMetaModel:
                 status = self.mm_projector.load_state_dict(get_w(mm_projector_weights, 'mm_projector'), strict=False)
                 print('missing_keys:', status.missing_keys)
 
-            # class_embedding_weights = get_w(mm_projector_weights, 'model.vision_tower.vision_tower.vision_model.embeddings')
-            # if len(class_embedding_weights) > 0:
-            #     self.vision_tower.vision_tower.vision_model.embeddings.load_state_dict(class_embedding_weights, strict=False)
 
 
 class LlavaMetaForCausalLM(ABC):
