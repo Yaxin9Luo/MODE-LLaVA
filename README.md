@@ -186,11 +186,14 @@ For more details, check the [full report](link_to_experiment_report).(Coming soo
 If you use $\gamma$-MOD in your work, please cite:
 
 ```bibtex
-@inproceedings{anonymous2025gammaMOD,
-  title={$\gamma$-MOD: Exploring Mixture-of-Depth Adaptation for Multimodal Large Language Models},
-  author={Anonymous},
-  booktitle={Arxiv},
-  year={2025}
+@misc{luo2024gammamodexploringmixtureofdepthadaptation,
+      title={$\gamma-$MoD: Exploring Mixture-of-Depth Adaptation for Multimodal Large Language Models}, 
+      author={Yaxin Luo and Gen Luo and Jiayi Ji and Yiyi Zhou and Xiaoshuai Sun and Zhiqiang Shen and Rongrong Ji},
+      year={2024},
+      eprint={2410.13859},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2410.13859}, 
 }
 ```
 
