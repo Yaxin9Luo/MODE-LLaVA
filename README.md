@@ -178,7 +178,8 @@ $\gamma$-MOD was tested on **three popular MLLMs** across **9 benchmark datasets
 | $\gamma$-MoD-LLaVA-HR-13B    | 18.8%                   | 50.4%                    | -0.3%         |
 | $\gamma$-MoD-LLaVA-HR-X-13B    | 17.4%                 | 58.6%                    | +0.4%          |
 | $\gamma$-MoD-Mini-Gemini-HD-7B    |41.0%                   | 58.1%                    | -1.0%          |
-For more details, check the [full report](link_to_experiment_report).(Coming soon!!!!!!!!!!)
+
+For more details, check the [full report](https://arxiv.org/abs/2410.13859).
 
 ---
 
