@@ -162,6 +162,7 @@ Then, your can run our evaluation script `bash scripts/v1_5/eval.sh`.
 $\gamma$-MOD was tested on **three popular MLLMs** across **9 benchmark datasets**.
 
 - **LLaVA-HR**: Training time reduced by **31%** and inference time by **53.2%**, with only **1.5%** accuracy drop.
+- **Mini-Gemini-HD**: Training time reduced by **41%** and inference time by **58.1%**, with only **1.0%** accuracy drop.
 - **Generalization**: Demonstrated the ability to generalize across different MLLMs.
 
 ![Experimental Results](/asset/compare_others.png)
