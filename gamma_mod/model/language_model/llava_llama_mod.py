@@ -428,7 +428,6 @@ class MoDLLaVALlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
         # Initialize weights and apply final processing
         self.post_init()
         
-        self.all_samples_route_probs = []
 
 
     def get_model(self):
@@ -501,8 +500,7 @@ class MoDLLaVALlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
             past_key_values=outputs.past_key_values,
             hidden_states=outputs.hidden_states,
             attentions=outputs.attentions,
-            mod_loss_list=outputs.mod_loss_list,
-            route_index = self.all_samples_route_probs
+            mod_loss_list=outputs.mod_loss_list
         )
 
     def prepare_inputs_for_generation(
